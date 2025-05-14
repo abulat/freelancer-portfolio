@@ -17,8 +17,7 @@ jobs:
       run: mkdir -p dist && cp -r app/* dist/
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }} # Use the GitHub-provided token
-        publish_branch: main # The branch to deploy to
-        publish_dir: dist # The directory to publish
+        folder: dist
+        branch: main
