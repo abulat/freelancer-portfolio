@@ -13,17 +13,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # - name: Setup Node.js
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: 16 # Use the Node.js version you need
-
     - name: Copy app content to dist folder
       run: mkdir -p dist && cp -r app/* dist/
-
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        folder: dist
-        branch: main
+        github_token: ${{ secrets.GITHUB_TOKEN }} # Use the GitHub-provided token
+        publish_branch: main # The branch to deploy to
+        publish_dir: dist # The directory to publish
