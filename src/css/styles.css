@@ -97,10 +97,13 @@ section h2 {
         top: 41px; /* Position below the navbar */
         right: 0;
         background-color: #35424a; /* Dark blue background */
-        width: 100%; /* Full width */
+        width: 33.33%; /* Full width */
+        min-width: 200px;
         transform: translateY(-100%); /* Hide the menu by default */
         opacity: 0;
         visibility: hidden;
+        padding-bottom: 10px;
+        padding-top: 10px;
     }
 
     .nav-list.active {
