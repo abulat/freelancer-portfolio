@@ -109,6 +109,20 @@ section h2 {
         visibility: visible;
     }
 
+    .nav-list li a {
+        color: #ffffff; /* White text */
+        text-decoration: none;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-list li a:hover {
+        background-color: #007bff; /* Light blue hover effect */
+        color: #ffffff;
+        border-radius: 5px;
+    }
+
     .menu-toggle {
         display: flex; /* Show hamburger menu on small screens */
     }
