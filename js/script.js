@@ -140,4 +140,22 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonialsContainer.appendChild(testimonialElement);
         });
     }
+
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+    const navLinks = document.querySelectorAll('.nav-list li a'); // Select all menu links
+
+    // Toggle the 'active' class on the nav-list when the hamburger menu is clicked
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+    // Hide the menu when a menu item is clicked, but only if the hamburger menu is visible
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.getComputedStyle(mobileMenu).display !== 'none') {
+                navList.classList.remove('active'); // Remove the 'active' class
+            }
+        });
+    });
 });
