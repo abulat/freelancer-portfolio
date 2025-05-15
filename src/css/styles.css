@@ -38,30 +38,28 @@ section h2 {
     font-size: 1.8em;
 }
 
-/* Navigation Menu */
+/* General Navigation Styles */
 .navbar {
     background-color: #35424a; /* Dark blue background */
-    padding: 10px 0;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Center-align the menu */
+    align-items: center;
+    height: 20px;
 }
 
-.navbar ul {
+.nav-list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-.navbar ul li {
-    display: inline;
-}
-
-.navbar ul li a {
+.nav-list li a {
     color: #ffffff; /* White text */
     text-decoration: none;
     font-size: 1.2em;
@@ -69,10 +67,36 @@ section h2 {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar ul li a:hover {
+.nav-list li a:hover {
     background-color: #007bff; /* Light blue hover effect */
     color: #ffffff;
     border-radius: 5px;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em; /* Size of the ☰ icon */
+    cursor: pointer;
+    height: 150%; /* Match the height of the navbar */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px; /* Position hamburger menu to the right */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 800px) {
+    .menu-toggle {
+        display: flex; /* Show hamburger menu on small screens */
+    }
+
+    .nav-list {
+        display: none; /* Hide the menu by default */
+    }
 }
 
 /* Containers */
