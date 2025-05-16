@@ -17,7 +17,7 @@ window.skills = {
     },
     "skill-tools": {
         "description": "I have practical experience building and using test automation frameworks with tools like Playwright, Selenium, Cypress, Rest-Assured, Wiremock, and Postman/Newman. I integrate these solutions into CI/CD pipelines, ensuring fast, reliable test execution and smooth releases. My approach focuses on creating scalable, maintainable frameworks that align with the team's development workflows.",
-        "tags": ["playwright", "selenium", "webdriverio", "cypress", "Rest-Assured", "jmeter", "postman", "newman", "TestComplete", "Wiremock", "CICD", "Azure DevOps", "GitHub Actions", "CircleCI", "Drone CI"]
+        "tags": ["playwright", "selenium", "webdriverio", "cypress", "Rest-Assured", "jmeter", "postman", "newman", "TestComplete", "Wiremock", "CICD", "Azure DevOps", "GitHub Actions", "CircleCI", "Drone CI", "AI", "Github Copilot", "ChatGPT", "Qodo AI"]
     },
     "skill-performance": {
         "description": "I have practical experience embedding JMeter performance tests into CI/CD workflows. I built a scalable solution using JMeter, Docker, MongoDB, and Bash, running on Kubernetes, to provide automated, repeatable performance testing as part of the deployment pipeline.",
