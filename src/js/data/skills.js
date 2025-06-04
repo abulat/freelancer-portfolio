@@ -1,8 +1,8 @@
 window.skills = {
     "skill-planning": {
         "name": "Test Planning",
-        "description": "I have extensive experience in test planning, strategy building, and test design, including both manual and automated approaches. I specialize in creating reliable, scalable test automation frameworks and embedding detailed, actionable reporting into these systems, ensuring teams get clear insights into software quality at every stage of development.",
-        "tags": ["planning", "reporting", "test design", "page model", "page object model", "Equivalence Partitioning", "Boundary Value Analysis", "Decision Table Testing", "State Transition Testing", "unit testing", "integration testing", "Allure Report", "Cucumber reporting"]
+        "description": "I have extensive experience in test planning, strategy building, and test design, including both manual and automated approaches. I specialize in creating reliable, scalable test automation frameworks, using industrial development best practices and patterns, and embedding detailed, actionable reporting into these systems, ensuring teams get clear insights into software quality at every stage of development.",
+        "tags": ["planning", "test planning", "test reporting", "test design", "unit testing", "integration testing", "Allure Report", "Cucumber"]
     },
     "skill-programming": {
         "name": "Programming",
@@ -17,12 +17,12 @@ window.skills = {
     "skill-tdd-bdd": {
         "name": "TDD & BDD",
         "description": "I have extensive experience with both TDD and BDD. I use TDD for unit testing with tools like JUnit, mocha and jest, and I apply BDD for integration and end-to-end testing in both Java and JavaScript frameworks. I’ve also integrated BDD test results directly into Azure DevOps, providing clear visibility into test outcomes as part of CI/CD pipelines.",
-        "tags": ["tdd", "bdd", "junit", "cucumber", "mocha"]
+        "tags": ["tdd", "BDD (Gherkin)", "junit", "cucumber", "mocha"]
     },
     "skill-tools": {
         "name": "Test Automation Tools",
         "description": "I have practical experience building and using test automation frameworks with tools like Playwright, Selenium, Cypress, Rest-Assured, Wiremock, and Postman/Newman. I integrate these solutions into CI/CD pipelines, ensuring fast, reliable test execution and smooth releases. My approach focuses on creating scalable, maintainable frameworks that align with the team's development workflows.",
-        "tags": ["playwright", "selenium", "webdriverio", "cypress", "Rest-Assured", "jmeter", "postman", "newman", "TestComplete", "Wiremock", "CICD", "Azure DevOps", "GitHub Actions", "CircleCI", "Drone CI", "AI", "Github Copilot", "ChatGPT", "Qodo AI"]
+        "tags": ["playwright", "selenium", "webdriverio", "cypress", "Rest-Assured", "jmeter", "postman", "newman", "TestComplete", "Wiremock", "CICD", "Azure DevOps", "GitHub Actions", "CircleCI", "Drone CI", "GenAI", "Github Copilot", "ChatGPT"]
     },
     "skill-performance": {
         "name": "Performance Testing",
@@ -42,6 +42,6 @@ window.skills = {
     "skill-types": {
         "name": "Testing Types",
         "description": "I have hands-on practical experience with various types of testing, including E2E, UI, API, and Security testing, using major test automation tools and frameworks. I’ve built robust testing solutions that cover all these layers, ensuring comprehensive test coverage and faster, more reliable releases.",
-        "tags": ["functional testing", "non-functional testing", "unit testing", "integration testing", "end-to-end testing", "regression testing", "smoke testing", "security testing"]
+        "tags": ["functional testing", "non-functional testing", "unit testing", "integration testing", "e2e testing", "regression testing", "smoke testing", "security testing"]
     }
 };
