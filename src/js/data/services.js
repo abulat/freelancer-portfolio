@@ -7,7 +7,7 @@ window.services = {
     "service-mentoring": {
         "name": "Mentoring and Coaching",
         "description": "I mentor and coach engineering teams and individual developers to help them reach their full potential. This includes evaluating team performance, spotting bottlenecks, and building tailored improvement plans.",
-        "tags": ["mentoring", "coaching", "training", "team performance"]
+        "tags": ["mentoring", "coaching", "training", "team performance", "leadership"]
     },
     "service-workshops": {
         "name": "QA and Testing Workshops",

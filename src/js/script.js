@@ -124,6 +124,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalDescription.innerHTML = `<p>Description not available.</p>`;
             }
 
+            // When opening a client in the modal, set data-client attribute
+            if (box.classList.contains('client-box')) {
+                modal.setAttribute('data-client', 'true');
+            } else {
+                modal.removeAttribute('data-client');
+            }
+
             openPopup(modal); // Use openPopup utility
         });
     });
@@ -179,19 +186,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Delegate click for tags inside skill popups
     document.body.addEventListener('click', function (e) {
         if (e.target.classList.contains('clickable-tag')) {
-            // Remove leading '#' if present and trim
             let tag = e.target.textContent.trim();
             if (tag.startsWith('#')) tag = tag.slice(1);
             tag = tag.toLowerCase();
 
-            // Find clients with this tag (case-insensitive)
+            // --- If tag is clicked inside the client popup or modal showing client, show service description ---
+            if (
+                e.target.closest('#client-popup') ||
+                (modal.getAttribute('data-client') === 'true')
+            ) {
+                const services = window.services || {};
+                const matchedService = Object.values(services)
+                    .find(service =>
+                        (service.tags || []).some(t => t.toLowerCase() === tag)
+                    );
+
+                let html = `<span class="close-button" id="close-services-popup" style="float:right;cursor:pointer;">&times;</span>`;
+                if (matchedService) {
+                    html += `<h3>Service: ${matchedService.name}</h3>`;
+                    html += `<p>${matchedService.description}</p>`;
+                    if (matchedService.tags && matchedService.tags.length > 0) {
+                        html += `<div style="margin-top:10px;">Tags: ${matchedService.tags.map(t => `<span class="tag">#${t}</span>`).join(' ')}</div>`;
+                    }
+                } else {
+                    html += `<p>No service found for this tag.</p>`;
+                }
+
+                const popup = document.getElementById('services-popup');
+                const content = document.getElementById('services-popup-content');
+                content.className = 'clients-popup-content';
+                content.innerHTML = html;
+                openPopup(popup);
+
+                document.getElementById('close-services-popup').onclick = function () {
+                    closeTopPopup();
+                };
+                popup.onclick = function (event) {
+                    if (event.target === popup) closeTopPopup();
+                };
+                return;
+            }
+
+            // --- Otherwise, show clients list as before ---
             const clients = window.clients || {};
             const matchedClients = Object.values(clients)
                 .filter(client =>
                     (client.tags || []).some(t => t.toLowerCase() === tag)
                 );
 
-            // Build HTML for the popup
             let html = `<span class="close-button" id="close-clients-popup" style="float:right;cursor:pointer;">&times;</span>`;
             html += `<h3>Clients where "${tag}" was actively used</h3>`;
             if (matchedClients.length > 0) {
@@ -202,18 +244,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 html += '<p>No clients found for this tag.</p>';
             }
 
-            // Show the popup
             const popup = document.getElementById('clients-popup');
             const content = document.getElementById('clients-popup-content');
             content.className = 'clients-popup-content';
             content.innerHTML = html;
-            openPopup(popup); // Use openPopup utility
+            openPopup(popup);
 
-            // Close handler
             document.getElementById('close-clients-popup').onclick = function () {
                 closeTopPopup();
             };
-            // Optional: close on outside click
             popup.onclick = function (event) {
                 if (event.target === popup) closeTopPopup();
             };
@@ -225,4 +264,6 @@ document.addEventListener('DOMContentLoaded', function() {
             closeTopPopup();
         }
     });
+
+    modal.removeAttribute('data-client');
 });
