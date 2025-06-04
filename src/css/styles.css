@@ -499,3 +499,12 @@ footer {
 .clients-popup-content .close-button:hover {
     color: #007bff;
 }
+
+.client-domain {
+    color: #888;
+    font-size: 0.95em;
+    margin-bottom: 6px;
+    margin-top: 10px;
+    display: block;
+    letter-spacing: 0.02em;
+}

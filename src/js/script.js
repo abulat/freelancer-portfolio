@@ -282,4 +282,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     modal.removeAttribute('data-client');
+
+    // Example for rendering a client box:
+    Object.values(window.clients).forEach(client => {
+        const clientBox = document.createElement('div');
+        clientBox.className = 'client-box';
+        clientBox.innerHTML = `
+            <strong>${client.name}</strong>
+            <div class="client-domain">
+                ${client.domain ? client.domain.join(', ') : ''}
+            </div>`;
+        // ...append clientBox to container...
+    });
+
+    // Fill in client domains
+    Object.entries(window.clients).forEach(([clientId, client]) => {
+        const box = document.getElementById(clientId);
+        if (box) {
+            const domainDiv = box.querySelector('.client-domain');
+            if (domainDiv && client.domain) {
+                // Capitalize the first letter of each domain
+                const capitalizedDomains = client.domain.map(d =>
+                    d.charAt(0).toUpperCase() + d.slice(1)
+                );
+                domainDiv.textContent = capitalizedDomains.join(', ');
+            }
+        }
+    });
 });

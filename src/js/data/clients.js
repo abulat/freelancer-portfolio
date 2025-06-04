@@ -4,21 +4,21 @@ window.clients = {
         "role": "Software Quality and CICD Coach",
         "description": "Was coaching development teams on DevOps/TestOps, test automation, integrating testing into Azure DevOps pipelines, and training engineers on Risk-based testing approach.",
         "tags": ["scrum", "qa", "test automation", "manual testing", "integration testing", "e2e testing", "test management", "test strategy", "planning", "test planning", "test execution", "test reporting", "leadership", "unit testing", "cuucumber", "BDD (Gherkin)", "java", "selenium", "webdriverio", "playwright", "ci/cd", "azure devops", "docker", "mentoring", "cucumber", "test design", "sql", "bash", "mysql", "tdd", "functional testing", "smoke testing","regression testing", "smoke testing", "security testing", "performance testing", "load testing", "scalability testing", "stress testing", "cicd workflows", "agile", "scrum", "kanban"],
-        "domain": ["banking", "finance", "fintech"]
+        "domain": ["Banking", "Finance", "Fintech"]
     },
     "client-deel": {
         "name": "Deel",
         "role": "QA Automation Tech Lead",
         "description": "Led and optimized QA and application delivery processes in a dynamic fast growing fintech environment, improving test automation and CI/CD efficiency. Defind a new hiring approach for QA roles, including interview structures, test assignments, and score cards. Mentored and coached teams on best practices in test automation, CI/CD, and Agile methodologies.",
         "tags": ["qa", "leadership", "test automation", "ci/cd", "mentoring", "drone_ci", "cici/cdcd", "webdriverio", "playwright", "TestRails", "javascript", "typescript", "mocha", "chai", "docker", "hiring", "recruitment", "interview structures", "test assignments", "score cards", "manual testing", "e2e testing", "Allure report", "team performance", "functional testing", "non-functional testing", "regression testing", "planning", "test planning", "test design", "bash", "cypress", "drone ci", "cicd workflows", "agile", "scrum", "kanban"],
-        "domain": ["Payroll", "HR",  "fintech"]
+        "domain": ["Payroll", "HR",  "Fintech"]
     },
     "client-epo": {
         "name": "European Patent Office (EPO)",
         "role": "QA Lead / Scrum Master",
         "description": "Working as a contractor for the European Patent Office I joined a new team to develop Ansera – a key departmental product. Set up agile development and QA processes, advocated for Scrum, and successfully built a high-performing team as Scrum Master. Tested and delivered multiple production releases in close collaboration with stakeholders.",
         "tags": ["scrum", "qa", "test automation", "manual testing", "integration testing", "e2e testing", "test management", "test strategy", "planning", "test planning", "test execution", "test reporting", "leadership", "unit testing", "cuucumber", "BDD (Gherkin)", "java", "selenium", "webdriverio", "playwright", "ci/cd", "azure devops", "docker", "mentoring", "cucumber", "test design", "sql", "bash", "mysql", "tdd", "functional testing", "smoke testing", "regression testing", "agile", "scrum", "scrum master", "effective refinements", "effective retrospectives" ],
-        "domain": ["patent", "legal", "intellectual property", "government"]
+        "domain": ["Patent", "Legal", "Intellectual Property", "Government"]
     },
     "client-evbox": {
         "name": "EVBox",
