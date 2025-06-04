@@ -2,7 +2,7 @@ window.skills = {
     "skill-planning": {
         "name": "Test Planning",
         "description": "I have extensive experience in test planning, strategy building, and test design, including both manual and automated approaches. I specialize in creating reliable, scalable test automation frameworks, using industrial development best practices and patterns, and embedding detailed, actionable reporting into these systems, ensuring teams get clear insights into software quality at every stage of development.",
-        "tags": ["planning", "test planning", "test reporting", "test design", "unit testing", "integration testing", "Allure Report", "Cucumber"]
+        "tags": ["planning", "test planning", "test reporting", "test design", "unit testing", "integration testing", "Allure Report", "Cucumber", "Azure test plans", "TestRails", "test strategy", "test management"]
     },
     "skill-programming": {
         "name": "Programming",
@@ -22,7 +22,7 @@ window.skills = {
     "skill-tools": {
         "name": "Test Automation Tools",
         "description": "I have practical experience building and using test automation frameworks with tools like Playwright, Selenium, Cypress, Rest-Assured, Wiremock, and Postman/Newman. I integrate these solutions into CI/CD pipelines, ensuring fast, reliable test execution and smooth releases. My approach focuses on creating scalable, maintainable frameworks that align with the team's development workflows.",
-        "tags": ["playwright", "selenium", "webdriverio", "cypress", "Rest-Assured", "jmeter", "postman", "newman", "TestComplete", "Wiremock", "CICD", "Azure DevOps", "GitHub Actions", "CircleCI", "Drone CI", "GenAI", "Github Copilot", "ChatGPT"]
+        "tags": ["playwright", "selenium", "webdriverio", "cypress", "Rest-Assured", "jmeter", "postman", "newman", "TestComplete", "Wiremock", "CI/CD", "Azure DevOps", "GitHub Actions", "CircleCI", "Drone CI", "GenAI", "Github Copilot", "ChatGPT",]
     },
     "skill-performance": {
         "name": "Performance Testing",
