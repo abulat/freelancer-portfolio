@@ -190,28 +190,44 @@ document.addEventListener('DOMContentLoaded', function() {
             if (tag.startsWith('#')) tag = tag.slice(1);
             tag = tag.toLowerCase();
 
-            // --- If tag is clicked inside the client popup or modal showing client, show service description ---
+            // --- If tag is clicked inside the client popup or modal showing client, show service & skill description ---
             if (
                 e.target.closest('#client-popup') ||
                 (modal.getAttribute('data-client') === 'true')
             ) {
                 const services = window.services || {};
+                const skills = window.skills || {};
+
+                // Find service and skill by tag
                 const matchedService = Object.values(services)
                     .find(service =>
                         (service.tags || []).some(t => t.toLowerCase() === tag)
                     );
+                const matchedSkill = Object.values(skills)
+                    .find(skill =>
+                        (skill.tags || []).some(t => t.toLowerCase() === tag)
+                    );
 
                 let html = `<span class="close-button" id="close-services-popup" style="float:right;cursor:pointer;">&times;</span>`;
+                html += `<h2>"${tag}" tagged in</h2>`;
+                // Service section
                 if (matchedService) {
-                    html += `<h3>Service: ${matchedService.name}</h3>`;
+                    html += `<div style="margin-bottom:24px;">`;
+                    html += `<h3>Service</h3>`;
+                    html += `<strong>${matchedService.name}</strong>`;
                     html += `<p>${matchedService.description}</p>`;
-                    if (matchedService.tags && matchedService.tags.length > 0) {
-                        html += `<div style="margin-top:10px;">Tags: ${matchedService.tags.map(t => `<span class="tag">#${t}</span>`).join(' ')}</div>`;
-                    }
-                } else {
-                    html += `<p>No service found for this tag.</p>`;
+                    html += `</div>`;
                 }
-
+                
+                // Skill section
+                if (matchedSkill) {
+                    html += `<div>`;
+                    html += `<h3>Skills:</h3>`;
+                    html += `<strong>${matchedSkill.name}</strong>`;
+                    html += `<p>${matchedSkill.description}</p>`;
+                    html += `</div>`;
+                }
+                
                 const popup = document.getElementById('services-popup');
                 const content = document.getElementById('services-popup-content');
                 content.className = 'clients-popup-content';
