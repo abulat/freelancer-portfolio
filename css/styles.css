@@ -234,6 +234,16 @@ section h2 {
     text-transform: lowercase;
 }
 
+.clickable-tag {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.clickable-tag:hover {
+    color: #0056b3;
+}
+
 /* Testimonials */
 #testimonials-container {
     width: 80%;
@@ -412,12 +422,12 @@ footer {
 /* About Me Section */
 #about {
     padding: 40px 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 5px;
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: center;
+    margin: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: auto; /* Let it fill the section */
+    text-align: center;
 }
 
 #about h2 {
@@ -446,4 +456,55 @@ footer {
     color: #555;
     line-height: 1.6;
     margin: 0;
+}
+
+/* Clients Popup Styles */
+.clients-popup-content {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px 24px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    color: #35424a;
+    text-align: left;
+    position: relative;
+}
+
+.clients-popup-content h3 {
+    margin-top: 0;
+    color: #000000;
+}
+
+.clients-popup-content ul {
+    padding-left: 20px;
+}
+
+.clients-popup-content li {
+    margin-bottom: 10px;
+}
+
+.clients-popup-content .close-button {
+    position: absolute;
+    right: 20px;
+    font-size: 1.5em;
+    color: #aaa;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.clients-popup-content .close-button:hover {
+    color: #007bff;
+}
+
+.client-domain {
+    color: #888;
+    font-size: 0.95em;
+    margin-bottom: 6px;
+    margin-top: 10px;
+    display: block;
+    letter-spacing: 0.02em;
 }
