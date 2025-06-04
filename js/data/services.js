@@ -12,7 +12,7 @@ window.services = {
     "service-workshops": {
         "name": "QA and Testing Workshops",
         "description": "I run hands-on workshops on both functional and non-functional testing, focusing on the right tools, approaches, and best practices for each.",
-        "tags": ["workshops", "training", "functional testing", "non-functional testing", "BDD (Gherkin)", "Selenium", "Playwright", "Allure report", "Cucumber", "QA"]
+        "tags": ["workshops", "training", "functional testing", "non-functional testing", "BDD (Gherkin)", "Selenium", "Playwright", "Allure report", "Cucumber", "QA", "risk-based testing", "value stream mapping"]
     },
     "service-hiring": {
         "name": "Hiring Process Improvement",
