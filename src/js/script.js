@@ -88,6 +88,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Combine data from skills.js, services.js, and clients.js
     const combinedData = { ...window.skills, ...window.services, ...window.clients };
 
+    // Popup stack to track open popups
+    const popupStack = [];
+
+    // Utility to open a popup and push to stack
+    function openPopup(popup) {
+        popup.style.display = 'flex';
+        popupStack.push(popup);
+    }
+
+    // Utility to close the top popup
+    function closeTopPopup() {
+        if (popupStack.length > 0) {
+            const topPopup = popupStack.pop();
+            topPopup.style.display = 'none';
+        }
+    }
+
     // Add click event to all boxes
     document.querySelectorAll(".service-box, .skill-box, .client-box").forEach((box) => {
         box.addEventListener("click", () => {
@@ -96,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (descriptionData) {
                 const tagsHtml = descriptionData.tags
-                    .map(tag => `<span class="tag">#${tag.toLowerCase()}</span>`)
+                    .map(tag => `<span class="tag clickable-tag">#${tag.toLowerCase()}</span>`)
                     .join(" ");
                 modalDescription.innerHTML = `
                     ${descriptionData.role ? `<h3>${descriptionData.role}</h3>` : ""}
@@ -107,19 +124,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalDescription.innerHTML = `<p>Description not available.</p>`;
             }
 
-            modal.style.display = "flex"; // Show the modal
+            // When opening a client in the modal, set data-client attribute
+            if (box.classList.contains('client-box')) {
+                modal.setAttribute('data-client', 'true');
+            } else {
+                modal.removeAttribute('data-client');
+            }
+
+            openPopup(modal); // Use openPopup utility
         });
     });
 
     // Close modal when clicking the close button
     closeButton.addEventListener("click", () => {
-        modal.style.display = "none";
+        closeTopPopup();
     });
 
     // Close modal when clicking outside the modal content
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
-            modal.style.display = "none";
+            closeTopPopup();
         }
     });
 
@@ -157,5 +181,132 @@ document.addEventListener('DOMContentLoaded', function() {
                 navList.classList.remove('active'); // Remove the 'active' class
             }
         });
+    });
+
+    // Delegate click for tags inside skill popups
+    document.body.addEventListener('click', function (e) {
+        if (e.target.classList.contains('clickable-tag')) {
+            let tag = e.target.textContent.trim();
+            if (tag.startsWith('#')) tag = tag.slice(1);
+            tag = tag.toLowerCase();
+
+            // --- If tag is clicked inside the client popup or modal showing client, show service & skill description ---
+            if (
+                e.target.closest('#client-popup') ||
+                (modal.getAttribute('data-client') === 'true')
+            ) {
+                const services = window.services || {};
+                const skills = window.skills || {};
+
+                // Find service and skill by tag
+                const matchedService = Object.values(services)
+                    .find(service =>
+                        (service.tags || []).some(t => t.toLowerCase() === tag)
+                    );
+                const matchedSkill = Object.values(skills)
+                    .find(skill =>
+                        (skill.tags || []).some(t => t.toLowerCase() === tag)
+                    );
+
+                let html = `<span class="close-button" id="close-services-popup" style="float:right;cursor:pointer;">&times;</span>`;
+                html += `<h2>"${tag}" tagged in</h2>`;
+                // Service section
+                if (matchedService) {
+                    html += `<div style="margin-bottom:24px;">`;
+                    html += `<h3>Service</h3>`;
+                    html += `<strong>${matchedService.name}</strong>`;
+                    html += `<p>${matchedService.description}</p>`;
+                    html += `</div>`;
+                }
+                
+                // Skill section
+                if (matchedSkill) {
+                    html += `<div>`;
+                    html += `<h3>Skills:</h3>`;
+                    html += `<strong>${matchedSkill.name}</strong>`;
+                    html += `<p>${matchedSkill.description}</p>`;
+                    html += `</div>`;
+                }
+                
+                const popup = document.getElementById('services-popup');
+                const content = document.getElementById('services-popup-content');
+                content.className = 'clients-popup-content';
+                content.innerHTML = html;
+                openPopup(popup);
+
+                document.getElementById('close-services-popup').onclick = function () {
+                    closeTopPopup();
+                };
+                popup.onclick = function (event) {
+                    if (event.target === popup) closeTopPopup();
+                };
+                return;
+            }
+
+            // --- Otherwise, show clients list as before ---
+            const clients = window.clients || {};
+            const matchedClients = Object.values(clients)
+                .filter(client =>
+                    (client.tags || []).some(t => t.toLowerCase() === tag)
+                );
+
+            let html = `<span class="close-button" id="close-clients-popup" style="float:right;cursor:pointer;">&times;</span>`;
+            html += `<h3>Clients where "${tag}" was actively used</h3>`;
+            if (matchedClients.length > 0) {
+                matchedClients.forEach(client => {
+                    html += `<p><strong>${client.name}</strong> &mdash; ${client.role}</p>`;
+                });
+            } else {
+                html += '<p>No clients found for this tag.</p>';
+            }
+
+            const popup = document.getElementById('clients-popup');
+            const content = document.getElementById('clients-popup-content');
+            content.className = 'clients-popup-content';
+            content.innerHTML = html;
+            openPopup(popup);
+
+            document.getElementById('close-clients-popup').onclick = function () {
+                closeTopPopup();
+            };
+            popup.onclick = function (event) {
+                if (event.target === popup) closeTopPopup();
+            };
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeTopPopup();
+        }
+    });
+
+    modal.removeAttribute('data-client');
+
+    // Example for rendering a client box:
+    Object.values(window.clients).forEach(client => {
+        const clientBox = document.createElement('div');
+        clientBox.className = 'client-box';
+        clientBox.innerHTML = `
+            <strong>${client.name}</strong>
+            <div class="client-domain">
+                ${client.domain ? client.domain.join(', ') : ''}
+            </div>`;
+        // ...append clientBox to container...
+    });
+
+    // Fill in client domains
+    Object.entries(window.clients).forEach(([clientId, client]) => {
+        const box = document.getElementById(clientId);
+        if (box) {
+            const domainDiv = box.querySelector('.client-domain');
+            if (domainDiv && client.domain) {
+                // Capitalize the first letter of each domain
+                const capitalizedDomains = client.domain.map(d =>
+                    d.charAt(0).toUpperCase() + d.slice(1)
+                );
+                domainDiv.textContent = capitalizedDomains.join(', ');
+            }
+        }
     });
 });
