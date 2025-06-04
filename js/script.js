@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Skill section
                 if (matchedSkill) {
                     html += `<div>`;
-                    html += `<h3>Skills:</h3>`;
+                    html += `<h3>Skills</h3>`;
                     html += `<strong>${matchedSkill.name}</strong>`;
                     html += `<p>${matchedSkill.description}</p>`;
                     html += `</div>`;
