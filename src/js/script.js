@@ -88,6 +88,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Combine data from skills.js, services.js, and clients.js
     const combinedData = { ...window.skills, ...window.services, ...window.clients };
 
+    // Popup stack to track open popups
+    const popupStack = [];
+
+    // Utility to open a popup and push to stack
+    function openPopup(popup) {
+        popup.style.display = 'flex';
+        popupStack.push(popup);
+    }
+
+    // Utility to close the top popup
+    function closeTopPopup() {
+        if (popupStack.length > 0) {
+            const topPopup = popupStack.pop();
+            topPopup.style.display = 'none';
+        }
+    }
+
     // Add click event to all boxes
     document.querySelectorAll(".service-box, .skill-box, .client-box").forEach((box) => {
         box.addEventListener("click", () => {
@@ -96,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (descriptionData) {
                 const tagsHtml = descriptionData.tags
-                    .map(tag => `<span class="tag">#${tag.toLowerCase()}</span>`)
+                    .map(tag => `<span class="tag clickable-tag">#${tag.toLowerCase()}</span>`)
                     .join(" ");
                 modalDescription.innerHTML = `
                     ${descriptionData.role ? `<h3>${descriptionData.role}</h3>` : ""}
@@ -107,19 +124,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalDescription.innerHTML = `<p>Description not available.</p>`;
             }
 
-            modal.style.display = "flex"; // Show the modal
+            openPopup(modal); // Use openPopup utility
         });
     });
 
     // Close modal when clicking the close button
     closeButton.addEventListener("click", () => {
-        modal.style.display = "none";
+        closeTopPopup();
     });
 
     // Close modal when clicking outside the modal content
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
-            modal.style.display = "none";
+            closeTopPopup();
         }
     });
 
@@ -157,5 +174,55 @@ document.addEventListener('DOMContentLoaded', function() {
                 navList.classList.remove('active'); // Remove the 'active' class
             }
         });
+    });
+
+    // Delegate click for tags inside skill popups
+    document.body.addEventListener('click', function (e) {
+        if (e.target.classList.contains('clickable-tag')) {
+            // Remove leading '#' if present and trim
+            let tag = e.target.textContent.trim();
+            if (tag.startsWith('#')) tag = tag.slice(1);
+            tag = tag.toLowerCase();
+
+            // Find clients with this tag (case-insensitive)
+            const clients = window.clients || {};
+            const matchedClients = Object.values(clients)
+                .filter(client =>
+                    (client.tags || []).some(t => t.toLowerCase() === tag)
+                );
+
+            // Build HTML for the popup
+            let html = `<span class="close-button" id="close-clients-popup" style="float:right;cursor:pointer;">&times;</span>`;
+            html += `<h3>Clients where "${tag}" was actively used</h3>`;
+            if (matchedClients.length > 0) {
+                matchedClients.forEach(client => {
+                    html += `<p><strong>${client.name}</strong> &mdash; ${client.role}</p>`;
+                });
+            } else {
+                html += '<p>No clients found for this tag.</p>';
+            }
+
+            // Show the popup
+            const popup = document.getElementById('clients-popup');
+            const content = document.getElementById('clients-popup-content');
+            content.className = 'clients-popup-content';
+            content.innerHTML = html;
+            openPopup(popup); // Use openPopup utility
+
+            // Close handler
+            document.getElementById('close-clients-popup').onclick = function () {
+                closeTopPopup();
+            };
+            // Optional: close on outside click
+            popup.onclick = function (event) {
+                if (event.target === popup) closeTopPopup();
+            };
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeTopPopup();
+        }
     });
 });

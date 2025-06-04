@@ -2,7 +2,7 @@ window.services = {
     "service-automation": {
         "name": "Test Automation",
         "description": "I help teams build solid test automation setups based on the test pyramid approach, covering everything from unit tests to integration and full system testing. I make sure automated tests are integrated smoothly into CI/CD pipelines, so teams can catch bugs early, release faster, and focus on building great features instead of firefighting.",
-        "tags": ["automation", "testing", "ci/cd", "integration", "e2e", "unit testing", "Selenium", "Playwright", "Allure", "Cucumber"]
+        "tags": ["test automation", "testing", "ci/cd", "integration testing", "e2e testing", "unit testing", "Selenium", "Playwright", "Allure report", "Cucumber"]
     },
     "service-mentoring": {
         "name": "Mentoring and Coaching",
@@ -12,7 +12,7 @@ window.services = {
     "service-workshops": {
         "name": "QA and Testing Workshops",
         "description": "I run hands-on workshops on both functional and non-functional testing, focusing on the right tools, approaches, and best practices for each.",
-        "tags": ["workshops", "training", "functional testing", "non-functional testing", "Gherkin", "Selenium", "Playwright", "Allure", "Cucumber"]
+        "tags": ["workshops", "training", "functional testing", "non-functional testing", "BDD (Gherkin)", "Selenium", "Playwright", "Allure report", "Cucumber"]
     },
     "service-hiring": {
         "name": "Hiring Process Improvement",
