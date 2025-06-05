@@ -497,3 +497,9 @@ footer {
     display: block;
     letter-spacing: 0.02em;
 }
+
+.client-logo {
+    height: 36px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
