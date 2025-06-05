@@ -9,7 +9,7 @@ window.clients = {
     "client-deel": {
         "name": "Deel",
         "role": "QA Automation Tech Lead",
-        "description": "Led and optimized QA and application delivery processes in a dynamic fast growing fintech environment, improving test automation and CI/CD efficiency. Defind a new hiring approach for QA roles, including interview structures, test assignments, and score cards. Mentored and coached teams on best practices in test automation, CI/CD, and Agile methodologies.",
+        "description": "Led and optimized QA and application delivery processes in a dynamic fast growing fintech environment, improving test automation and CI/CD efficiency. Define   d a new hiring approach for QA roles, including interview structures, test assignments, and score cards. Mentored and coached teams on best practices in test automation, CI/CD, and Agile methodologies.",
         "tags": ["qa", "leadership", "test automation", "ci/cd", "mentoring", "drone_ci", "cici/cdcd", "webdriverio", "playwright", "TestRails", "javascript", "typescript", "mocha", "chai", "docker", "hiring", "recruitment", "interview structures", "test assignments", "score cards", "manual testing", "e2e testing", "Allure report", "team performance", "functional testing", "non-functional testing", "regression testing", "planning", "test planning", "test design", "bash", "cypress", "drone ci", "cicd workflows", "agile", "scrum", "kanban", "Test Rails"],
         "domain": ["Payroll", "HR",  "Fintech"]
     },
