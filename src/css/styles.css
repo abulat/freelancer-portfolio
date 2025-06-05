@@ -195,6 +195,7 @@ section h2 {
     max-width: 500px;
     width: 90%;
     text-align: center;
+    position: relative;
 }
 
 .modal-content h3 {
@@ -212,10 +213,18 @@ section h2 {
 
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 5px;
+    right: 10px;
     font-size: 1.5em;
+    color: #aaa;
     cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 10;
+}
+
+.close-button:hover {
+    color: #007bff;
 }
 
 /* Tags */
@@ -445,7 +454,7 @@ footer {
     padding: 30px 24px;
     margin: 0 auto;
     width: 90%;
-    max-width: 500px;
+    max-width: 480px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     color: #35424a;
     text-align: left;
@@ -467,7 +476,8 @@ footer {
 
 .clients-popup-content .close-button {
     position: absolute;
-    right: 20px;
+    top: 5px;
+    right: 10px;
     font-size: 1.5em;
     color: #aaa;
     cursor: pointer;

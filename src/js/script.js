@@ -309,4 +309,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    const closeBtn = document.getElementById('close-main-modal');
+    if (closeBtn) {
+        closeBtn.onclick = function () {
+            modal.style.display = 'none';
+        };
+    }
 });
