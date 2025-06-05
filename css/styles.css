@@ -377,46 +377,25 @@ footer {
 
 /* Popup Styles */
 .popup {
+    display: none;
     position: fixed;
-    top: 0;
+    z-index: 1000;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0,0,0,0.4);
     justify-content: center;
     align-items: center;
-    z-index: 1000;
 }
 
-.popup-content {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-}
-
-.popup-content p {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.close-popup {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.close-popup:hover {
-    background-color: #0056b3;
+.popup > div,
+.modal-content {
+    max-height: 70vh;
+    overflow-y: auto;
+    /* Optional: for smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
 }
 
 /* About Me Section */
