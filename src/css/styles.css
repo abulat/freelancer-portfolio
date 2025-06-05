@@ -196,12 +196,13 @@ section h2 {
     width: 90%;
     text-align: center;
     position: relative;
+    font-size: 0.9em;
 }
 
 .modal-content h3 {
     text-align: left;
     margin-bottom: 10px;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #35424a;
 }
 
@@ -502,4 +503,20 @@ footer {
     height: 36px;
     margin-right: 10px;
     vertical-align: middle;
+}
+
+.client-achievements {
+    margin-top: 18px;
+    text-align: left;
+}
+.client-achievements h4 {
+    margin-bottom: 8px;
+    color: #35424a;
+}
+.client-achievements ul {
+    padding-left: 20px;
+    margin: 0;
+}
+.client-achievements li {
+    margin-bottom: 6px;
 }

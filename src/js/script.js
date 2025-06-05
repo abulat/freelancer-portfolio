@@ -82,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const modal = document.getElementById("modal");
-    const modalDescription = document.getElementById("modal-description");
     const closeButton = document.querySelector(".close-button");
 
     // Combine data from skills.js, services.js, and clients.js
@@ -110,14 +109,31 @@ document.addEventListener('DOMContentLoaded', function() {
         box.addEventListener("click", () => {
             const id = box.id; // Get the box ID
             const descriptionData = combinedData[id]; // Fetch description by ID
-
+            let achievementsHtml = '';
             if (descriptionData) {
+                if (id.startsWith("client-")) {
+                    
+                    // Render Key Achievements if present
+                    if (descriptionData.achievements && descriptionData.achievements.length > 0) {
+                        achievementsHtml = `
+                            <div class="client-achievements">
+                                <h4>Key Achievements</h4>
+                                <ul>
+                                    ${descriptionData.achievements.map(item => `<li>${item}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+
+                    }
+                    console.log(id, descriptionData.achievements);
+                }
                 const tagsHtml = descriptionData.tags
                     .map(tag => `<span class="tag clickable-tag">#${tag.toLowerCase()}</span>`)
                     .join(" ");
                 modalDescription.innerHTML = `
-                    ${descriptionData.role ? `<h3>${descriptionData.role}</h3>` : ""}
+                    ${descriptionData.role ? `<h3>Role: ${descriptionData.role}</h3>` : ""}
                     <p>${descriptionData.description}</p>
+                    ${achievementsHtml}
                     <div class="tags-container">${tagsHtml}</div>
                 `;
             } else {
