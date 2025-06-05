@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         `;
 
                     }
-                    console.log(id, descriptionData.achievements);
                 }
                 const tagsHtml = descriptionData.tags
                     .map(tag => `<span class="tag clickable-tag">#${tag.toLowerCase()}</span>`)
