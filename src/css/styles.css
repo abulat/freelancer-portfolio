@@ -520,3 +520,8 @@ footer {
 .client-achievements li {
     margin-bottom: 6px;
 }
+
+.no-scroll {
+    overflow: hidden !important;
+    height: 100vh;
+}
