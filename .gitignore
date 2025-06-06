@@ -1,0 +1,5 @@
+.DS_store
+.vscode
+.qodo
+# Ignore all node_modules directories
+node_modules/
