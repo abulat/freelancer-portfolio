@@ -15,7 +15,7 @@ window.clients = {
     },
     "client-deel": {
         "name": "Deel",
-        "role": "QA Automation Tech Lead",
+        "role": "Tech Lead",
         "description": "Led and optimized QA and application delivery processes in a dynamic fast growing fintech environment, improving test automation and CI/CD efficiency. Defined a new hiring approach for QA roles, including interview structures, test assignments, and score cards. Mentored and coached teams on best practices in test automation, CI/CD, and Agile methodologies.",
         "achievements": [
             "Enhanced collaboration among 25+ remote QA Engineers, fostering a more cohesive and efficient team dynamic",
@@ -30,16 +30,16 @@ window.clients = {
     },
     "client-epo": {
         "name": "European Patent Office (EPO)",
-        "role": "QA Lead / Scrum Master",
-        "description": "Working as a contractor for the European Patent Office I joined a new team to develop Ansera – a key departmental product. Set up agile development and QA processes, advocated for Scrum, and successfully built a high-performing team as Scrum Master. Tested and delivered multiple production releases in close collaboration with stakeholders.",
+        "role": "Test and delivery Manager",
+        "description": "As a Test and Delivery Manager, I am responsible for planning and coordinating testing activities and technical developments for project releases in the following Search Systems: Ansera, AbS, SSL. This includes leading products delivery in close collaboration with product managers, helping product owners to define requirements, feature prioritization, and establishing realistic product deliverables, maintaining and improving CICD pipelines (GitHub), investigating production incidents, planning changes in ServiceNow, preparing and deploying updates to the production system using ArgoCD.",
         "achievements": [
             "Introduced the SCRUM framework to streamline development",
-            "Served as Scrum Master, successfully building a highly productive development process",
-            "Led QA efforts, organizing QA processes and implementing test automation across various development and release phases",
+            "Established and setup highly productive development process",
+            "Led QA and Developemnt efforts",
             "Contributed to the development and delivery of several production releases for the newly built application",
-            "Developed features and test automation tools using JavaScript libraries ReactJS, MobX, Enzyme, Sinon, Mocha, Chai."
+            "Took part in development of features and test automation tools using JavaScript libraries ReactJS, MobX, Enzyme, Sinon, Mocha, Chai."
         ],
-        "tags": ["scrum", "qa", "test automation", "manual testing", "integration testing", "e2e testing", "test management", "test strategy", "planning", "test planning", "test execution", "test reporting", "leadership", "unit testing", "cuucumber", "BDD (Gherkin)", "java", "selenium", "webdriverio", "playwright", "ci/cd", "azure devops", "docker", "mentoring", "cucumber", "test design", "sql", "bash", "mysql", "tdd", "functional testing", "smoke testing", "regression testing", "agile", "scrum", "scrum master", "effective refinements", "effective retrospectives" ],
+        "tags": ["management", "delivery", "scrum", "qa", "test automation", "manual testing", "integration testing", "e2e testing", "test management", "test strategy", "planning", "test planning", "test execution", "test reporting", "leadership", "unit testing", "cuucumber", "BDD (Gherkin)", "java", "selenium", "webdriverio", "playwright", "ci/cd", "azure devops", "docker", "mentoring", "cucumber", "test design", "sql", "bash", "mysql", "tdd", "functional testing", "smoke testing", "regression testing", "agile", "scrum", "scrum master", "effective refinements", "effective retrospectives" ],
         "domain": ["Patent", "Legal", "Intellectual Property", "Government"]
     },
     "client-evbox": {
