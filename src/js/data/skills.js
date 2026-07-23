@@ -1,7 +1,7 @@
 window.skills = {
     "skill-planning": {
-        "name": "Test Planning",
-        "description": "I have extensive experience in test planning, strategy building, and test design, including both manual and automated approaches. I specialize in creating reliable, scalable test automation frameworks, using industrial development best practices and patterns, and embedding detailed, actionable reporting into these systems, ensuring teams get clear insights into software quality at every stage of development.",
+        "name": "Test Management",
+        "description": "I have extensive experience in test management, planning, strategy building, and test design, including both manual and automated approaches. I specialize in creating reliable, scalable test automation frameworks, using industrial development best practices and patterns, and embedding detailed, actionable reporting into these systems, ensuring teams get clear insights into software quality at every stage of development.",
         "tags": ["planning", "test planning", "test reporting", "test design", "unit testing", "integration testing", "Allure Report", "Cucumber", "Azure test plans", "TestRails", "test strategy", "test management"]
     },
     "skill-programming": {
