@@ -16,7 +16,12 @@ window.services = {
     },
     "service-hiring": {
         "name": "Hiring Process Improvement",
-        "description": "I help teams improve their hiring process for QA roles. This includes refining interview structures, creating clear scorecards, and designing practical test assignments.",
+        "description": "I help teams to improve their hiring process for QA roles. This includes refining interview structures, creating clear scorecards, and designing practical test assignments.",
         "tags": ["hiring", "recruitment", "interview structures", "test assignments", "score cards"]
+    },
+    "service-delivery": {
+        "name": "Delivery Process Improvement",
+        "description": "I help teams to improve their delivery process using bewt devops practices. This includes refining current setup, find areas for improvements, and create a plan countable improvements.",
+        "tags": ["delivery", "management", "CI/CD", "devops", "score cards"]
     }
 };
