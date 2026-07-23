@@ -32,7 +32,7 @@ window.skills = {
     "skill-cicd": {
         "name": "CI/CD",
         "description": "I have hands-on experience with CI/CD tools like Azure DevOps, Drone CI, and CircleCI, configuring pipelines using YAML. I specialize in embedding test automation into these workflows, ensuring fast feedback loops and reliable quality gates, along with setting up comprehensive test reporting within the pipelines.",
-        "tags": ["Azure DevOps", "CircleCI", "Drone CI", "Docker"]
+        "tags": ["Azure DevOps", "CircleCI", "Drone CI", "Docker", "devops"]
     },
     "skill-agile": {
         "name": "Agile Methodologies",
